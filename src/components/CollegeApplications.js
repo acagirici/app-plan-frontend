@@ -5,7 +5,8 @@ const CollegeApplications = (props) => {
     return (
         <div>
             {props.college_applications.map(college_applications => 
-            <li>{college_applications.name} || {college_applications.level}</li>)}
+            <li key={college_applications.id}>{college_applications.name} || {college_applications.level} || {college_applications.app_type}</li>
+            )}
         </div>
     )
 

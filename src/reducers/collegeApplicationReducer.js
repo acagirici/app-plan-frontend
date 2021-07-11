@@ -6,6 +6,8 @@ export default function collegeApplicationReducer(state = {college_applications:
     switch(action.type){
         case 'FETCH_COLLEGE_APPLICATIONS':
             return {college_applications: action.payload}
+        case 'ADD_COLLEGE_APPLICATION':
+            return {...state, college_applications: [...state.college_applications, action.payload]}
         default:
             return state
     }
