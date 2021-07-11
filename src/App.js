@@ -1,22 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { fetchCollegeApplications } from './actions/fetchCollegeApplications'
+// import { fetchCollegeApplications } from './actions/fetchCollegeApplications'
+import CollegeApplicationContainer from './containers/CollegeApplicationContainer'
 
 class App extends React.Component {
 
-  componentDidMount(){
-    // fetch('http://localhost:3000/api/v1/college_applications')
-    //   .then(resp => resp.json())
-    //   .then(data => console.log(data))
-  }
+  // componentDidMount(){
+  //   // fetch('http://localhost:3000/api/v1/college_applications')
+  //   //   .then(resp => resp.json())
+  //   //   .then(data => console.log(data))
+  // }
 
   render() {
     return (
       <div className="App">
-        App
+        <CollegeApplicationContainer />
       </div>
     );
   }
 }
 
-export default connect(null, {fetchCollegeApplications})(App);
+export default connect()(App);

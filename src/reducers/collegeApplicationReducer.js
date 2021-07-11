@@ -3,7 +3,11 @@
 //State will mostly be an object. You can return just an array, but it can get messy.
 
 export default function collegeApplicationReducer(state = {college_applications: []}, action) {
-
-    return state
+    switch(action.type){
+        case 'FETCH_COLLEGE_APPLICATIONS':
+            return {college_applications: action.payload}
+        default:
+            return state
+    }
 
 }
