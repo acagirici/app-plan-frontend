@@ -8,6 +8,15 @@ export default function collegeApplicationReducer(state = {college_applications:
             return {college_applications: action.payload}
         case 'ADD_COLLEGE_APPLICATION':
             return {...state, college_applications: [...state.college_applications, action.payload]}
+        case 'ADD_PLAN':
+            let college_applications = state.college_applications.map(college_application => {
+                if (college_application.id === action.payload.id) {
+                    return action.payload
+                } else {
+                    return college_application
+                }
+            })
+            return {...state, college_applications: college_applications}
         default:
             return state
     }

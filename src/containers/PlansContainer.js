@@ -7,7 +7,7 @@ class PlansContainer extends React.Component {
     render() {
         return (
             <div>
-                <PlanInput />
+                <PlanInput college_application={this.props.college_application}/>
                 <Plans plans={this.props.college_application && this.props.college_application.plans}/>
             </div>
         )

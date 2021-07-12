@@ -1,55 +1,63 @@
 import React from 'react'
-
+import {connect} from 'react-redux'
+import {addPlan} from '../actions/addPlan'
 
 class PlansInput extends React.Component {
 
-    // state = {name: '', 
-    // app_type: '', 
-    // level: ''
-    // }
+    state = {
+        college_name: '', 
+        app_deadline: '', 
+        app_fee: '',
+        visit_date: '',
+        visit_impressions: '',
+        essay_topic: '',
+        rating: ''
+    }
 
-    // handleChange = (event) => {
-    //     this.setState({
-    //         [event.target.name]: event.target.value
-    //     })
-    // }
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
 
-    // handleSubmit = (e) => {
-    //     e.preventDefault()
-    //     this.props.addCollegeApplication(this.state)
-    //     this.setState({
-    //         name: '', 
-    //         app_type: '', 
-    //         level: ''
-    //     })
-    // }
+    handleSubmit = (e) => {
+        e.preventDefault()
+        this.props.addPlan(this.state, this.props.college_application.id)
+        this.setState({
+            college_name: '', 
+            app_deadline: '', 
+            app_fee: '',
+            visit_date: '',
+            visit_impressions: '',
+            essay_topic: '',
+            rating: ''
+        })
+    }
 
     render() {
         return (
             <div>
-                {/* <form onSubmit={this.handleSubmit}>
-                    <label>Application Name: </label>
-                    <input type='text' placeholder='Name' name='name' value={this.state.name} onChange={this.handleChange}/><br/>
-                    <label>Application Type: </label>
-                    <select name="app_type" placeholder='Select Application Type' value={this.state.app_type} onChange={this.handleChange}>
-                        <option value="" disabled selected>Select your app-type</option>
-                        <option value="First-Year">First-Year</option>
-                        <option value="Transfer">Transfer</option>
-                    </select><br/>
-                    <label>Application Level: </label>
-                    <select name="level" placeholder='Select Application Type' value={this.state.level} onChange={this.handleChange}>
-                        <option value="" disabled selected>Select your app-level</option>
-                        <option value="Undergraduate">Undergraduate</option>
-                        <option value="Graduate">Graduate</option>
-                        <option value="Community College">Community College</option>
-                        <option value="Vocational">Vocational</option>
-                    </select><br/>
+                <form onSubmit={this.handleSubmit}><br/>
+                    <label>Institution Name: </label>
+                    <input type='text' placeholder='Name' name='college_name' value={this.state.college_name} onChange={this.handleChange}/><br/>
+                    <label>Application Deadline: </label>
+                    <input type='date' placeholder='Name' name='app_deadline' value={this.state.app_deadline} onChange={this.handleChange}/><br/>
+                    <label>Application Fee: </label>
+                    <input type='number' step="0.01" name='app_fee' value={this.state.app_fee} onChange={this.handleChange}/><br/>
+                    <label>Planned Visit Date: </label>
+                    <input type='date' name='visit_date' value={this.state.visit_date} onChange={this.handleChange}/><br/>
+                    <label>Visit Impressions: </label>
+                    <textarea rows="8" cols="80" placeholder='type in your impressions of visit or questions to ask' name='visit_impressions' value={this.state.visit_impressions} onChange={this.handleChange}/><br/>
+                    <label>Essay Topics: </label>
+                    <textarea rows="8" cols="80" placeholder='type in essay topics for institution' name='essay_topic' value={this.state.essay_topic} onChange={this.handleChange}/><br/>
+                    <label>Rating Score: </label>
+                    <input type='number' step="0.01" name='rating' value={this.state.rating} onChange={this.handleChange}/><br/>
                     <input type='submit' />
-                </form> */}
+                </form>
                 Input
             </div>
         )
     }
 }
 
-export default PlansInput
+export default connect(null, {addPlan})(PlansInput)
