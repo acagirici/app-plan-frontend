@@ -10,7 +10,7 @@ const CollegeApplications = (props) => {
             <h1>All College Applications:</h1>
             {props.college_applications.map(college_application => 
             <li key={college_application.id}>
-                <Link to={`/college_applications/${college_application.id}`}>{college_application.name} || {college_application.app_type} || {college_application.level}</Link>
+                <Link to={`/college_applications/${college_application.id}`}>{college_application.name}</Link>
             </li>
             )}
         </div>
