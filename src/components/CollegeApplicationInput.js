@@ -1,6 +1,8 @@
 import React from 'react'
 import {addCollegeApplication} from '../actions/addCollegeApplication'
 import { connect } from 'react-redux'
+import Button from '@material-ui/core/Button';
+import '../style.css'
 
 class CollegeApplicationInput extends React.Component {
 
@@ -33,14 +35,12 @@ class CollegeApplicationInput extends React.Component {
                     <input type='text' placeholder='Name' name='name' value={this.state.name} onChange={this.handleChange}/><br/>
                     <label>Application Type: </label>
                     <select name="app_type" placeholder='Select Application Type' value={this.state.app_type} onChange={this.handleChange}>
-                        <option value="" disabled selected>Select your app-type</option>
-                        <option value="First-Year">First-Year</option>
+                        <option defaultValue="First-Year">First-Year</option>
                         <option value="Transfer">Transfer</option>
                     </select><br/>
                     <label>Application Level: </label>
                     <select name="level" placeholder='Select Application Type' value={this.state.level} onChange={this.handleChange}>
-                        <option value="" disabled selected>Select your app-level</option>
-                        <option value="Undergraduate">Undergraduate</option>
+                        <option defaultValue="Undergraduate">Undergraduate</option>
                         <option value="Graduate">Graduate</option>
                         <option value="Community College">Community College</option>
                         <option value="Vocational">Vocational</option>

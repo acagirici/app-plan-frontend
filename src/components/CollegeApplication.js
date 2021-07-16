@@ -1,5 +1,6 @@
 import React from 'react'
 import PlansContainer from '../containers/PlansContainer'
+import '../style.css'
 
 const CollegeApplication = (props) => {
     console.log(props)
@@ -8,7 +9,7 @@ const CollegeApplication = (props) => {
     console.log(college_application)
 
     return (
-        <div>
+        <div style={{textAlign: 'Center'}}>
             <h2>
              {college_application ? college_application.name : null}
             </h2>

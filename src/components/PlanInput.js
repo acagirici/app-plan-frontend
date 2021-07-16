@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addPlan} from '../actions/addPlan'
+import '../style.css'
 
 class PlansInput extends React.Component {
 
@@ -36,7 +37,7 @@ class PlansInput extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id='container'>
                 <form onSubmit={this.handleSubmit}><br/>
                     <label>Institution Name: </label>
                     <input type='text' placeholder='Name' name='college_name' value={this.state.college_name} onChange={this.handleChange}/><br/>
@@ -54,7 +55,6 @@ class PlansInput extends React.Component {
                     <input type='number' step="0.01" name='rating' value={this.state.rating} onChange={this.handleChange}/><br/>
                     <input type='submit' />
                 </form>
-                Input
             </div>
         )
     }

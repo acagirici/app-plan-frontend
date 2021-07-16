@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    line-height: 1.5em;
+    font-size: 1.3em;
+}
+
+a {
+    color: #097659;
+}
+
+.container {
+    width: 960px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+
+.delete-activity-link {
+    color: red;
+}
+
+#editable {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+#activity-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 10px;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  input[type=text], select, textarea, [type=date], [type=number] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    background: rgb(231, 230, 224);
+    background-attachment: none;
+    padding-right: 10px;
+    vertical-align: text-top;
+  }
+
+
+  label {
+    display: block;
+  }
+  
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+
+ .delete-bttn {
+    background-color: #e42f22;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #4586a0;
+  }
+
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    text-align: left;
+  }
+
+
+  #container {
+    float:left;
+    width:620px;
+}
+
+#content {
+    float:left;
+    width:500px;
+}
+
+#applications-container h1 {
+    color: black;
+    font-family: cursive;
+    padding-left: 10px;
+}
+/* 
+#applications-container li {
+    width:200px;
+    height:200px;
+    background:#333;
+    
+    display: table-cell;
+    vertical-align: middle;
+    list-style-type: none;
+} */
+
+#applications-container li {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+#applications-container a {
+    color: cadetblue;
+    font-style: oblique;
+    text-decoration: none;
+    display: block;
+    background: green;
+    color: bisque;
+    padding: 10px 15px;
+    margin: 6px 0;
+    border-radius: 5px;
+    align: center;
+    width: 30%;
+}
