@@ -16,10 +16,6 @@ a {
 }
 
 
-.delete-activity-link {
-    color: red;
-}
-
 #editable {
     border: 1px solid black;
     padding: 20px;
@@ -69,7 +65,17 @@ a {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    float: left;
+    float: right;
+  }
+
+  .delete-bttnn {
+    background-color: #e42f22;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: center;
   }
   
   input[type=submit]:hover {
@@ -133,6 +139,5 @@ a {
     padding: 10px 15px;
     margin: 6px 0;
     border-radius: 5px;
-    align: center;
     width: 30%;
 }

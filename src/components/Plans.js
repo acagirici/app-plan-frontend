@@ -1,8 +1,10 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import { deletePlan } from '../actions/deletePlan'
 import '../style.css'
 
 const Plans = (props) => {
-    
+
     const myStyle = {
         color: "white",
         backgroundColor: "DodgerBlue",
@@ -16,13 +18,16 @@ const Plans = (props) => {
         fontFamily: "Cursive",
         fontStyle: "Oblique"
       }
+    
+      const handleDelete = (plan) => {
+        props.deletePlan(plan.id, plan.college_application_id)
+      }
 
-    console.log(props.plans)
     return (
         <div id='content'>
             <h1 style={headingStyle}>Institution Notes/Plans:</h1>
             {props.plans && props.plans.map(plan =>
-            <ul key={plan.id}><h3 style={myStyle}>{plan.college_name}</h3>
+            <ul key={plan.id}><h3 style={myStyle}>{plan.college_name} <button onClick={() => handleDelete(plan)} className='delete-bttn'>Delete</button></h3>
                 <li><strong>Application Deadline: </strong>{plan.app_deadline}</li>
                 <li><strong>Application Fee: </strong>${plan.app_fee}</li>
                 <li><strong>Visit Date: </strong>{plan.visit_date}</li>
@@ -35,4 +40,4 @@ const Plans = (props) => {
     )
 }
 
-export default Plans
+export default connect(null, { deletePlan }) (Plans)

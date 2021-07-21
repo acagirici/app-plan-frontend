@@ -42,7 +42,7 @@ class PlansInput extends React.Component {
                     <label>Institution Name: </label>
                     <input type='text' placeholder='Name' name='college_name' value={this.state.college_name} onChange={this.handleChange}/><br/>
                     <label>Application Deadline: </label>
-                    <input type='date' placeholder='Name' name='app_deadline' value={this.state.app_deadline} onChange={this.handleChange}/><br/>
+                    <input type='date' name='app_deadline' value={this.state.app_deadline} onChange={this.handleChange}/><br/>
                     <label>Application Fee: </label>
                     <input type='number' step="0.01" name='app_fee' value={this.state.app_fee} onChange={this.handleChange}/><br/>
                     <label>Planned Visit Date: </label>
